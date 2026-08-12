@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ながらかいご 音声変換ツール — 導入ガイド</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">ながらかいご 社内ツール</div>
+  <h1>音声変換ツール<br>導入ガイド</h1>
+  <p>議事録テキストをキャラクター音声のMP3に変換するツールです。<br>このページの手順に沿って進めてください。</p>
+  <a class="btn-download" href="https://github.com/nagara-internal/voicevox-transcript-tool/archive/refs/heads/main.zip" download>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    ツールをダウンロード（ZIP）
+  </a>
+</div>
+
+<main>
+
+  <div class="intro-box">
+    <h2>はじめる前に確認してください</h2>
+    <ul>
+      <li><strong>対応OS：</strong> Mac（macOS）のみ</li>
+      <li><strong>インターネット接続：</strong> 初回セットアップ時のみ必要</li>
+      <li><strong>所要時間：</strong> 初回セットアップ 約10〜15分（VOICEVOXのダウンロード含む）</li>
+    </ul>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div>
+        <h2>ツールをダウンロードする</h2>
+        <div class="step-sub">初回のみ</div>
+      </div>
+    </div>
+
+    <p>上の <strong>「ツールをダウンロード（ZIP）」</strong> ボタンをクリックするとZIPファイルがダウンロードされます。</p>
+
+    <p>ダウンロードが完了したら、ZIPファイルをダブルクリックして<strong>解凍</strong>してください。<br>
+    解凍するとフォルダが作成されます。このフォルダは <strong>消さずに</strong>「書類」フォルダなど分かりやすい場所に移動しておいてください。</p>
+
+    <div class="callout">
+      <strong>フォルダの中身</strong>
+      解凍したフォルダの中に「<strong>setup.command</strong>」というファイルがあります。次のステップで使います。
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <h2>セットアップを実行する</h2>
+        <div class="step-sub">初回のみ・1回だけ</div>
+      </div>
+    </div>
+
+    <p>解凍したフォルダの中にある <strong>「setup.command」</strong> をダブルクリックしてください。</p>
+
+    <div class="callout callout-warn">
+      <strong>「開発元が未確認のため開けません」と表示された場合</strong>
+      右クリック（または Control+クリック）→「開く」→「開く」を選んでください。
+    </div>
+
+    <p>黒い画面（ターミナル）が自動で開き、セットアップが始まります。<br>
+    「<strong>セットアップ完了！</strong>」と表示されたら Enterキーを押して閉じてください。</p>
+
+    <div class="callout">
+      <strong>セットアップが完了すると…</strong>
+      デスクトップに「<strong>VOICEVOX変換ツール.command</strong>」が自動で作成されます。これが毎日使う起動ボタンになります。
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <h2>VOICEVOXアプリをインストールする</h2>
+        <div class="step-sub">初回のみ・無料</div>
+      </div>
+    </div>
+
+    <p>音声変換には <strong>VOICEVOX</strong>（無料）が必要です。以下の手順でインストールしてください。</p>
+
+    <p><strong>① VOICEVOXのサイトを開く</strong><br>
+    ブラウザで <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener">https://voicevox.hiroshiba.jp/</a> にアクセスし、「<strong>ダウンロード</strong>」ボタンをクリックします。</p>
+
+    <img src="images/voicevox_01_homepage.png" alt="VOICEVOXのトップページ。ダウンロードボタンが表示されている">
+
+    <p><strong>② ダウンロード設定を選ぶ</strong><br>
+    ダウンロードダイアログが表示されます。以下の通りに選択してください。</p>
+
+    <ul>
+      <li><strong>OS：</strong> Mac（緑色になっていることを確認）</li>
+      <li><strong>パッケージ：</strong> インストーラー（推奨）</li>
+      <li><strong>対応モード：</strong> 下の表で自分のMacに合う方を選ぶ</li>
+    </ul>
+
+    <div style="margin: 20px 0;">
+      <div class="cpu-selector">
+        <div class="cpu-tab active" onclick="selectCpu('intel', this)">
+          <div class="cpu-name">CPU (Intel)</div>
+          <div class="cpu-desc">2020年以前のMac<br>Intel製CPU搭載</div>
+        </div>
+        <div class="cpu-tab" onclick="selectCpu('apple', this)">
+          <div class="cpu-name">CPU (Apple)</div>
+          <div class="cpu-desc">2020年以降のMac<br>M1 / M2 / M3 / M4搭載</div>
+        </div>
+      </div>
+
+      <div id="panel-intel" class="cpu-panel active">
+        <div class="callout callout-blue">
+          <strong>Intel Mac をお使いの方</strong>
+          「CPU (Intel)」を選択し（緑色に）、「インストーラー」を選び、「ダウンロード」をクリックします。
+        </div>
+        <img src="images/voicevox_02_download_dialog.png" alt="VOICEVOXダウンロードダイアログ — CPU(Intel)選択済み">
+      </div>
+
+      <div id="panel-apple" class="cpu-panel">
+        <div class="callout callout-blue">
+          <strong>Apple Silicon Mac（M1/M2/M3/M4）をお使いの方</strong>
+          「CPU (Apple)」を選択し（緑色に）、「インストーラー」を選び、「ダウンロード」をクリックします。
+        </div>
+        <img src="images/voicevox_03_download_apple.png" alt="VOICEVOXダウンロードダイアログ — CPU(Apple)選択済み">
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>どちらのMacか分からない場合</strong>
+      画面左上のAppleマーク（）→「このMacについて」をクリック。「チップ」に「Apple M1」などと書いてあれば CPU (Apple)、「Intel」と書いてあれば CPU (Intel) を選んでください。
+    </div>
+
+    <p><strong>③ インストールする</strong><br>
+    ダウンロードしたインストーラーをダブルクリックして、画面の指示に従いインストールしてください。<br>
+    インストール完了後、VOICEVOXアプリを起動しておいてください。</p>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <h2>毎日の使い方</h2>
+        <div class="step-sub">2回目以降はここから</div>
+      </div>
+    </div>
+
+    <ol>
+      <li><strong>VOICEVOXアプリを起動する</strong>（Finderのアプリケーションフォルダから）</li>
+      <li><strong>デスクトップの「VOICEVOX変換ツール.command」をダブルクリックする</strong></li>
+      <li>ブラウザが自動で開きます</li>
+    </ol>
+
+    <div class="callout" style="margin-top: 20px;">
+      <strong>ブラウザが開いたら…</strong>
+    </div>
+
+    <table class="usage-table">
+      <tr>
+        <th>ステップ</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td>STEP 1</td>
+        <td>議事録テキストを貼り付けて「解析する」を押す</td>
+      </tr>
+      <tr>
+        <td>STEP 2</td>
+        <td>話者ごとにキャラクターを選ぶ</td>
+      </tr>
+      <tr>
+        <td>STEP 3</td>
+        <td>「変換してダウンロード」を押してMP3を保存する</td>
+      </tr>
+    </table>
+
+    <div class="callout callout-warn" style="margin-top: 16px;">
+      <strong>終了するときは</strong>
+      ブラウザのタブを閉じてから、黒い画面（ターミナル）を閉じてください。
+    </div>
+  </div>
+
+  <div class="section-divider"><span>トラブルシューティング</span></div>
+
+  <div class="trouble">
+    <h2>よくある問題と解決方法</h2>
+
+    <div class="trouble-item">
+      <div class="trouble-q">「VOICEVOXに接続できません」と表示される</div>
+      <div class="trouble-a">VOICEVOXアプリが起動していません。VOICEVOXを起動してから、ブラウザをリロード（再読み込み）してください。</div>
+    </div>
+
+    <div class="trouble-item">
+      <div class="trouble-q">ブラウザが開かない</div>
+      <div class="trouble-a">デスクトップの「VOICEVOX変換ツール.command」をもう一度ダブルクリックしてください。それでも開かない場合は担当者に連絡してください。</div>
+    </div>
+
+    <div class="trouble-item">
+      <div class="trouble-q">「開発元が未確認のため開けません」と出る</div>
+      <div class="trouble-a">右クリック（または Control+クリック）→「開く」→「開く」を選んでください。</div>
+    </div>
+
+    <div class="trouble-item">
+      <div class="trouble-q">setup.commandを実行したが「Python 3.10以上が必要」と出る</div>
+      <div class="trouble-a"><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a> からPythonをインストールしてから、もう一度 setup.command を実行してください。</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  ながらかいご 社内ツール — 本ツールは <a href="https://voicevox.hiroshiba.jp/" target="_blank" rel="noopener">VOICEVOX</a> を使用しています
+</footer>
+
+<script>
+function selectCpu(type, el) {
+  document.querySelectorAll('.cpu-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.cpu-panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-' + type).classList.add('active');
+}
+</script>
+
+</body>
+</html>
