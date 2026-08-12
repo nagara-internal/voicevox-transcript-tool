@@ -1,6 +1,8 @@
-# ながらかいご 音声変換ツール
+# text-to-mp3 音声変換ツール
 
 議事録テキスト（`話者名: 発言内容` 形式）を、VOICEVOXのキャラクター音声（ずんだもん・四国めたんなど）でMP3に変換するツールです。
+
+**導入ガイド（社員向け）:** https://nagara-internal.github.io/voicevox-transcript-tool/
 
 ---
 

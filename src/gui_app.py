@@ -1,4 +1,4 @@
-"""ながらかいご 音声変換 — macOS GUIアプリ."""
+"""text-to-mp3 音声変換 — macOS GUIアプリ."""
 
 import json
 import os
@@ -20,7 +20,7 @@ from config_loader import get_speaker_config, load_config
 from parser import parse_transcript
 from synthesizer import VoicevoxSynthesizer
 
-APP_NAME = "ながらかいご 音声変換"
+APP_NAME = "text-to-mp3 音声変換"
 VOICEVOX_URL = "https://voicevox.hiroshiba.jp/"
 VOICEVOX_APP = "/Applications/VOICEVOX.app"
 APP_SUPPORT = Path.home() / "Library" / "Application Support" / "VoicevoxTranscriptTool"
@@ -149,7 +149,7 @@ class Sidebar(ctk.CTkFrame):
         logo.pack(fill="x", padx=20, pady=(28, 0))
         ctk.CTkLabel(logo, text="🎙", font=("SF Pro Display", 36),
                      text_color=ACCENT).pack()
-        ctk.CTkLabel(logo, text="ながらかいご\n音声変換",
+        ctk.CTkLabel(logo, text="text-to-mp3\n音声変換",
                      font=("SF Pro Display", 12, "bold"),
                      text_color=TEXT, justify="center").pack(pady=(4, 0))
 
@@ -402,7 +402,7 @@ class GuideView(ctk.CTkScrollableFrame):
     def _about(self):
         c = self._section("🎙", "このアプリについて")
         self._para(c, "議事録テキスト（話者名: 発言内容 形式）を VOICEVOX の音声に変換して MP3 ファイルを自動生成するツールです。")
-        self._para(c, "ながらかいごのマニュアル動画・研修素材の音声制作にお使いください。")
+        self._para(c, "マニュアル動画・研修素材の音声制作にお使いください。")
         self._div(c)
         for icon, text in [
             ("1️⃣", "議事録テキストを .txt ファイルで用意する"),

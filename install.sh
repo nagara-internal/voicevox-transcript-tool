@@ -1,5 +1,5 @@
 #!/bin/bash
-# install.sh — ながらかいご 音声変換ツール セットアップスクリプト
+# install.sh — text-to-mp3 音声変換ツール セットアップスクリプト
 
 set -e
 
@@ -10,7 +10,7 @@ LAUNCHER_PATH="$HOME/Desktop/$LAUNCHER_NAME"
 
 echo ""
 echo "======================================"
-echo " ながらかいご 音声変換ツール セットアップ"
+echo " text-to-mp3 音声変換ツール セットアップ"
 echo "======================================"
 echo ""
 
@@ -66,7 +66,7 @@ cat > "$LAUNCHER_PATH" << LAUNCHER
 cd "$TOOL_DIR"
 echo ""
 echo "======================================"
-echo " ながらかいご 音声変換ツール 起動中"
+echo " text-to-mp3 音声変換ツール 起動中"
 echo "======================================"
 echo ""
 echo "ブラウザが自動で開きます..."

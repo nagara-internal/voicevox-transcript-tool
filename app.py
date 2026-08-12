@@ -1,4 +1,4 @@
-"""ながらかいご 音声変換 — Streamlit ローカル UI."""
+"""text-to-mp3 音声変換 — Streamlit ローカル UI."""
 
 import os
 import sys
@@ -21,7 +21,7 @@ VOICEVOX_URL = "http://localhost:50021"
 # ── ページ設定 ────────────────────────────────────────────────────────────────
 
 st.set_page_config(
-    page_title="ながらかいご 音声変換",
+    page_title="text-to-mp3 音声変換",
     page_icon="🎙",
     layout="centered",
 )
@@ -194,7 +194,7 @@ def _run_synthesis(
 
 col_title, col_status = st.columns([3, 1])
 with col_title:
-    st.title("🎙 ながらかいご 音声変換")
+    st.title("🎙 text-to-mp3 音声変換")
 with col_status:
     voicevox_ok = _check_voicevox()
     if voicevox_ok:

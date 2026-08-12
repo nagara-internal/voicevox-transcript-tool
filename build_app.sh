@@ -1,10 +1,10 @@
 #!/bin/bash
-# ながらかいご 議事録→音声変換 — macOS .app + .dmg ビルドスクリプト
+# text-to-mp3 音声変換ツール — macOS .app + .dmg ビルドスクリプト
 set -e
 
 cd "$(dirname "$0")"
 
-APP_NAME="ながらかいご音声変換"
+APP_NAME="text-to-mp3"
 DIST_DIR="dist"
 
 echo "📦 依存パッケージを確認..."
